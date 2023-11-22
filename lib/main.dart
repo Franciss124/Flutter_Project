@@ -18,10 +18,10 @@ class _State extends State {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
+          /* leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () => {print("Menu Icon has been pressed")},
-          ),
+          ),*/
           title: Text(
             'MyApp',
             style: TextStyle(
@@ -52,6 +52,54 @@ class _State extends State {
         ),
         body: Center(
           child: Text('I am Eargar to learn! \nFrancis'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          elevation: 10.0,
+          child: Icon(Icons.add),
+          onPressed: () => {},
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        drawer: Drawer(
+          elevation: 15.0,
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text("Francis"),
+                accountEmail: Text("Francis@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text("Francis"),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text("SF"),
+                  )
+                ],
+              ),
+              ListTile(
+                title: Text("All Inbox"),
+                leading: Icon(Icons.mail),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text("All Primary"),
+                leading: Icon(Icons.person),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text("Promotio"),
+                leading: Icon(Icons.people),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+            ],
+          ),
         ),
       ),
     );
